@@ -42,9 +42,14 @@ public class Appointments {
         appointments.add(appointment);
     }
 
-    public static void delete(Appointments appointment){
-        appointments.remove(appointment);
+    public static void delete(Appointments appointment) {
+        if (appointments.contains(appointment)) {
+            appointments.remove(appointment);
+        } else {
+            System.out.println("Appointment not found.");
+        }
     }
+
 
     public String listApps(){
         StringBuilder list = new StringBuilder();
